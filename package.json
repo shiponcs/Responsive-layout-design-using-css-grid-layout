@@ -1,0 +1,16 @@
+{
+  "name": "building-layouts-with-css-grid",
+  "version": "1.0.0",
+  "description": "Course Title: Building Layouts with the CSS Grid Link: https://app.pluralsight.com/course-player?clipId=13dd5f8a-5c93-4d15-817e-cd4ba27ef758",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2"
+  }
+}

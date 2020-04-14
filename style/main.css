@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic");
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono";
+  display: grid;
+  grid-template-rows: auto 50px;
+  grid-template-columns: 8% 92%;
+  grid-template-areas:
+    "sidebar right"
+    "footer footer";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #043131;
+  color: rgb(243, 185, 128);
+  padding: 1em;
+}
+
+section#hero {
+  background-color: #36adad;
+  padding: 2em;
+  border-top: 5px solid #2ea0a0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-area: hero;
+}
+
+.main {
+  grid-area: right;
+  display: grid;
+  grid-template-rows: 51px fit-content(30%) 40% auto;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  float: right;
+  padding-right: 20px;
+}
+
+#logo {
+  padding: 10px;
+  margin: 5px;
+  background-color: #d1f3f3;
+  /* text-align: center; */
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+ul li {
+  display: inline;
+  padding: 10px;
+}
+ul li a {
+  color: rgb(255, 255, 255);
+}
+
+header {
+  grid-area: header;
+  background-color: #41c7c7;
+  display: grid;
+  grid-template-columns: [logo-start] fit-content(20%) [nav-start] auto [nav-end];
+  grid-area: head;
+}
+
+#content h1 {
+  text-transform: uppercase;
+  color: #ffff;
+}
+
+#content p {
+  color: #ffff;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightgrey;
+}
+
+.fa {
+  color: #043131;
+}
+
+#features {
+  width: 100%;
+  grid-area: showcase;
+  padding: 0;
+  /* margin: 0; */
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-area: features;
+}
+
+ul li p {
+  font-size: 1em;
+}
+
+ul#features li {
+  background-color: rgb(128, 120, 120);
+  /* padding: 1em; */
+  margin: 0.2em;
+  border-radius: 9px;
+}
+
+section#info {
+  background-color: lightblue;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: space-around;
+  grid-area: invention;
+}
+
+#content-photo {
+  max-width: 50%;
+  border-radius: 20px;
+}
+
+/* for tablet viewport */
+@media screen and (max-width: 60em) {
+  .sidebar {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Roboto Mono";
+    display: grid;
+    grid-template-rows: auto 50px;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "right"
+      "footer";
+  }
+  .main {
+    grid-template-areas:
+      "head"
+      "hero"
+      "features"
+      "invention";
+  }
+  #features {
+    grid-template-columns: repeat(2, auto);
+    grid-area: features;
+  }
+  ul#features li:nth-child(5) {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .main {
+    grid-template-rows: auto fit-content(30%) 40% auto;
+  }
+  header {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto;
+  }
+  #logo {
+    margin: 0;
+    align-items: center;
+  }
+  ul {
+    float: none;
+    padding-right: 0px;
+  }
+}
