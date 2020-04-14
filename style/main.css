@@ -97,6 +97,7 @@ img {
 }
 
 footer {
+  text-align: center;
   grid-area: footer;
   background-color: lightgrey;
 }
